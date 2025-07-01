@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "edge": "stellarodyssey:block/starglass_pane_top",
+    "pane": "stellarodyssey:block/starglass"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "stellarodyssey:starstone",
+  "result": {
+    "id": "stellarodyssey:starstone_bricks",
+    "count": 1
+  }
+}

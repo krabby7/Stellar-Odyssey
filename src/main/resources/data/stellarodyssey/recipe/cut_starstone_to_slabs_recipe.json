@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "stellarodyssey:cut_starstone"
+  },
+  "result": {
+    "id": "stellarodyssey:cut_starstone_slabs",
+    "count": 6
+  }
+}

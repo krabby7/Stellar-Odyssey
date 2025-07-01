@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "stellarodyssey:block/cut_starstone_slab"
+    },
+    "type=double": {
+      "model": "stellarodyssey:block/cut_starstone"
+    },
+    "type=top": {
+      "model": "stellarodyssey:block/cut_starstone_slab_top"
+    }
+  }
+}

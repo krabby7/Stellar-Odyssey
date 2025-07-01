@@ -1,0 +1,28 @@
+{
+  "creativetab.stellarodyssey.stellarodyssey": "Stellar Odyssey",
+  "block.stellarodyssey.stardust": "Stardust",
+  "block.stellarodyssey.sus_stardust": "Suspicious Stardust",
+  "block.stellarodyssey.starstone": "Starstone",
+  "block.stellarodyssey.cut_starstone": "Cut Starstone",
+  "block.stellarodyssey.chiseled_starstone": "Chiseled Starstone",
+  "block.stellarodyssey.starstone_bricks": "Starstone Bricks",
+  "block.stellarodyssey.starstone_bricks_slab": "Starstone Brick Slab",
+  "block.stellarodyssey.starstone_bricks_stairs": "Starstone Brick Stairs",
+  "block.stellarodyssey.starstone_bricks_wall": "Starstone Brick Wall",
+  "block.stellarodyssey.cut_starstone_slab": "Cut Starstone Slab",
+  "block.stellarodyssey.cut_starstone_stairs": "Cut Starstone Stairs",
+  "block.stellarodyssey.cut_starstone_wall": "Cut Starstone Wall",
+  "block.stellarodyssey.starglass": "Starglass",
+  "block.stellarodyssey.starglass_pane": "Starglass Pane",
+
+
+
+  "block.stellarodyssey.sunburnt_shrub": "Sunburnt Grass",
+  "block.stellarodyssey.potted_sunburnt_shrub": "Potted Sunburnt Grass",
+
+  "item.stellarodyssey.ender_dragon_fruit": "Ender Dragon Fruit",
+  "item.stellarodyssey.dragon_cactus_seeds": "Dragon Cactus Seeds",
+
+  "entity.stellarodyssey.mummy_enderman": "Mummified Enderman",
+  "item.stellarodyssey.mummy_enderman_spawn_egg": "Mummified Enderman Spawn Egg"
+}

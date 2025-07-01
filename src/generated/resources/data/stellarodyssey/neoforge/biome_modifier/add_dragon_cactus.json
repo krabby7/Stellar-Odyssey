@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "stellarodyssey:solar_desert",
+  "features": "stellarodyssey:dragon_cactus_placed",
+  "step": "vegetal_decoration"
+}

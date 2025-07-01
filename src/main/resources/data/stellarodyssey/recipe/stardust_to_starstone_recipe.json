@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": "stellarodyssey:stardust"
+  },
+  "result": {
+    "id": "stellarodyssey:starstone",
+    "count": 1
+  }
+}
