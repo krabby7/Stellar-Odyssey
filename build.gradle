@@ -22,6 +22,20 @@ repositories {
     mavenLocal()
     maven { url = 'https://maven.minecraftforge.net/' }
     maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    maven {
+        name = 'Sherds API'
+        url = 'https://dl.cloudsmith.io/public/thomasglasser/sherdsapi/maven/'
+        content {
+            includeGroupAndSubgroups("dev.thomasglasser.sherdsapi")
+        }
+    }
+    maven {
+        name = 'TommyLib'
+        url = 'https://dl.cloudsmith.io/public/thomasglasser/tommylib/maven/'
+        content {
+            includeGroupAndSubgroups("dev.thomasglasser.tommylib")
+        }
+    }
 }
 
 base {
@@ -141,6 +155,9 @@ dependencies {
 
     implementation  group:'org.spongepowered', name: 'mixin', version: '0.8.5'
     implementation  'com.github.glitchfiend:TerraBlender-neoforge:' + minecraft_version + '-' + terrablender_version
+
+    implementation "dev.thomasglasser.sherdsapi:sherdsapi-neoforge-${minecraft_version}:${sherdsapi_version}"
+    jarJar implementation("dev.thomasglasser.tommylib:tommylib-neoforge-${minecraft_version}:${tommylib_version}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

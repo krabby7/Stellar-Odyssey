@@ -41,6 +41,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SUNBURNT_SHRUB);
 
                         output.accept(ModItems.MUMMY_ENDERMAN_SPAWN_EGG);
+
+                        output.accept(ModItems.SOLAR_POTTERY_SHERD);
                     }).build());
 
     public static void register(IEventBus eventBus) {
