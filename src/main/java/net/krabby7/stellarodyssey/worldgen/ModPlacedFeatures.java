@@ -26,6 +26,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> SUNBURNT_SHRUB_PLACED_KEY = registerKey("sunburnt_shrub_placed");
 
+    public static final ResourceKey<PlacedFeature> SUNCCULENT_PLACED_KEY = registerKey("suncculent_placed");
+
     public static final ResourceKey<PlacedFeature> DRAGON_CACTUS_PLACED_KEY = registerKey("dragon_cactus_placed");
     public static final ResourceKey<PlacedFeature> BLACK_OPAL_GEODE_PLACED_KEY = registerKey("black_opal_geode_placed");
 
@@ -41,7 +43,10 @@ public class ModPlacedFeatures {
                 List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
         register(context,DRAGON_CACTUS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DRAGON_CACTUS_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+                List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+        register(context,SUNCCULENT_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUNCCULENT_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

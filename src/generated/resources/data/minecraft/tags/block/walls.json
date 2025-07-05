@@ -1,5 +1,8 @@
 {
   "values": [
-    "stellarodyssey:starstone_bricks_wall"
+    "stellarodyssey:starstone_bricks_wall",
+    "stellarodyssey:moonstone_bricks_wall",
+    "stellarodyssey:cut_starstone_wall",
+    "stellarodyssey:cut_moonstone_wall"
   ]
 }

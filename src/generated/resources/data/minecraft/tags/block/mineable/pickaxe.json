@@ -9,6 +9,16 @@
     "stellarodyssey:starstone_bricks_wall",
     "stellarodyssey:cut_starstone_slab",
     "stellarodyssey:cut_starstone_stairs",
-    "stellarodyssey:cut_starstone_wall"
+    "stellarodyssey:cut_starstone_wall",
+    "stellarodyssey:moonstone",
+    "stellarodyssey:cut_moonstone",
+    "stellarodyssey:chiseled_moonstone",
+    "stellarodyssey:moonstone_bricks",
+    "stellarodyssey:moonstone_bricks_slab",
+    "stellarodyssey:moonstone_bricks_stairs",
+    "stellarodyssey:moonstone_bricks_wall",
+    "stellarodyssey:cut_moonstone_slab",
+    "stellarodyssey:cut_moonstone_stairs",
+    "stellarodyssey:cut_moonstone_wall"
   ]
 }

@@ -40,6 +40,8 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SUNBURNT_SHRUB_KEY = registerKey("sunburnt_shrub");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SUNCCULENT_KEY = registerKey("suncculent");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> DRAGON_CACTUS_KEY = registerKey("dragon_cactus");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLACK_OPAL_GEODE_KEY = registerKey("black_opal_geode");
@@ -96,6 +98,8 @@ public class ModConfiguredFeatures {
         register(context, DRAGON_CACTUS_KEY, Feature.FLOWER, new RandomPatchConfiguration(32, 64, 2,
                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.DRAGON_CACTUS.get().defaultBlockState().setValue(DragonCactusBlock.AGE, Integer.valueOf(2)))))));
 
+        register(context, SUNCCULENT_KEY, Feature.FLOWER, new RandomPatchConfiguration(12, 32, 2,
+                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SUNCCULENT.get())))));
 
     }
 

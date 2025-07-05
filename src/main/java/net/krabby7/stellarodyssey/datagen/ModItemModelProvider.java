@@ -22,9 +22,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         wallItem(ModBlocks.STARSTONE_BRICKS_WALL, ModBlocks.STARSTONE_BRICKS);
         wallItem(ModBlocks.CUT_STARSTONE_WALL, ModBlocks.CUT_STARSTONE);
+        wallItem(ModBlocks.MOONSTONE_BRICKS_WALL, ModBlocks.MOONSTONE_BRICKS);
+        wallItem(ModBlocks.CUT_MOONSTONE_WALL, ModBlocks.CUT_MOONSTONE);
         flowerItem(ModBlocks.SUNBURNT_SHRUB);
+        flowerItem(ModBlocks.SUNCCULENT);
         basicItem(ModItems.DRAGON_CACTUS_SEEDS.get());
         withExistingParent(ModItems.MUMMY_ENDERMAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.OVERSEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     public void flowerItem(DeferredBlock<Block> block) {

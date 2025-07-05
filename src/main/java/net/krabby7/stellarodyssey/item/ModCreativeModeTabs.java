@@ -36,11 +36,28 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STARGLASS);
                         output.accept(ModBlocks.STARGLASS_PANE);
 
+                        output.accept(ModBlocks.MOONDUST);
+                        output.accept(ModBlocks.SUS_MOONDUST);
+                        output.accept(ModBlocks.MOONSTONE);
+                        output.accept(ModBlocks.CUT_MOONSTONE);
+                        output.accept(ModBlocks.CUT_MOONSTONE_SLAB);
+                        output.accept(ModBlocks.CUT_MOONSTONE_STAIRS);
+                        output.accept(ModBlocks.CUT_MOONSTONE_WALL);
+                        output.accept(ModBlocks.CHISELED_MOONSTONE);
+                        output.accept(ModBlocks.MOONSTONE_BRICKS);
+                        output.accept(ModBlocks.MOONSTONE_BRICKS_SLAB);
+                        output.accept(ModBlocks.MOONSTONE_BRICKS_STAIRS);
+                        output.accept(ModBlocks.MOONSTONE_BRICKS_WALL);
+                        output.accept(ModBlocks.MOONGLASS);
+                        output.accept(ModBlocks.MOONGLASS_PANE);
+
                         output.accept(ModItems.DRAGON_CACTUS_SEEDS);
                         output.accept(ModItems.ENDER_DRAGON_FRUIT);
                         output.accept(ModBlocks.SUNBURNT_SHRUB);
+                        output.accept(ModBlocks.SUNCCULENT);
 
                         output.accept(ModItems.MUMMY_ENDERMAN_SPAWN_EGG);
+                        output.accept(ModItems.OVERSEER_SPAWN_EGG);
 
                         output.accept(ModItems.SOLAR_POTTERY_SHERD);
                     }).build());

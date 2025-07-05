@@ -15,17 +15,38 @@
   "block.stellarodyssey.starglass": "Starglass",
   "block.stellarodyssey.starglass_pane": "Starglass Pane",
 
+  "block.stellarodyssey.moondust": "Moondust",
+  "block.stellarodyssey.sus_moondust": "Suspicious Moondust",
+  "block.stellarodyssey.moonstone": "Moonstone",
+  "block.stellarodyssey.cut_moonstone": "Cut Moonstone",
+  "block.stellarodyssey.chiseled_moonstone": "Chiseled Moonstone",
+  "block.stellarodyssey.moonstone_bricks": "Moonstone Bricks",
+  "block.stellarodyssey.moonstone_bricks_slab": "Moonstone Brick Slab",
+  "block.stellarodyssey.moonstone_bricks_stairs": "Moonstone Brick Stairs",
+  "block.stellarodyssey.moonstone_bricks_wall": "Moonstone Brick Wall",
+  "block.stellarodyssey.cut_moonstone_slab": "Cut Moonstone Slab",
+  "block.stellarodyssey.cut_moonstone_stairs": "Cut Moonstone Stairs",
+  "block.stellarodyssey.cut_moonstone_wall": "Cut Moonstone Wall",
+  "block.stellarodyssey.moonglass": "Moonglass",
+  "block.stellarodyssey.moonglass_pane": "Moonglass Pane",
 
 
   "block.stellarodyssey.sunburnt_shrub": "Sunburnt Grass",
   "block.stellarodyssey.potted_sunburnt_shrub": "Potted Sunburnt Grass",
+  "block.stellarodyssey.suncculent": "Suncculent",
+  "block.stellarodyssey.potted_suncculent": "Potted Suncculent",
 
   "item.stellarodyssey.ender_dragon_fruit": "Ender Dragon Fruit",
-  "item.stellarodyssey.dragon_cactus_seeds": "Dragon Cactus Seeds",
+  "item.stellarodyssey.dragon_cactus_seeds": "Dragon Tooth Cactus Seeds",
+  "block.stellarodyssey.dragon_cactus": "Dragon Tooth Cactus",
+
 
   "item.stellarodyssey.solar_pottery_sherd": "Solar Pottery Sherd",
 
 
   "entity.stellarodyssey.mummy_enderman": "Mummified Enderman",
-  "item.stellarodyssey.mummy_enderman_spawn_egg": "Mummified Enderman Spawn Egg"
+  "item.stellarodyssey.mummy_enderman_spawn_egg": "Mummified Enderman Spawn Egg",
+
+  "entity.stellarodyssey.overseer": "Overseer",
+  "item.stellarodyssey.overseer_spawn_egg": "Overseer Spawn Egg"
 }

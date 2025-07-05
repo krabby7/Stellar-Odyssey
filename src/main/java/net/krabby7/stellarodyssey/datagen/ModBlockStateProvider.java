@@ -31,8 +31,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         //blockWithItem(ModBlocks.BLACK_OPAL_BLOCK);
 
-        //blockItem(ModBlocks.STARGLASS);
+        blockItem(ModBlocks.STARGLASS);
+        blockItem(ModBlocks.MOONGLASS);
         //blockItem(ModBlocks.STARGLASS_PANE);
+
+        blockItem(ModBlocks.MOONDUST);
+        blockItem(ModBlocks.CUT_MOONSTONE);
+        blockItem(ModBlocks.MOONSTONE);
+        blockItem(ModBlocks.MOONSTONE_BRICKS);
+        blockItem(ModBlocks.CHISELED_MOONSTONE);
 
         stairsBlock(((StairBlock) ModBlocks.STARSTONE_BRICKS_STAIRS.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()));
         slabBlock(((SlabBlock) ModBlocks.STARSTONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()));
@@ -47,7 +54,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.POTTED_SUNBURNT_SHRUB.get(), models().singleTexture("potted_sunburnt_shrub", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.SUNBURNT_SHRUB.get())).renderType("cutout"));
 
-        makeBush(((SweetBerryBushBlock) ModBlocks.DRAGON_CACTUS.get()), "dragon_cactus_stage", "dragon_cactus_stage");
+        makeBush(((BushBlock) ModBlocks.DRAGON_CACTUS.get()), "dragon_cactus_stage", "dragon_cactus_stage");
+
+        simpleBlock(ModBlocks.SUNCCULENT.get(),
+                models().cross(blockTexture(ModBlocks.SUNCCULENT.get()).getPath(), blockTexture(ModBlocks.SUNCCULENT.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_SUNCCULENT.get(), models().singleTexture("potted_suncculent", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.SUNCCULENT.get())).renderType("cutout"));
     }
 
     private void leavesBlock(DeferredBlock<Block> deferredBlock) {
@@ -77,7 +89,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
 
-    public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {
+    public void makeBush(BushBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> states(state, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);

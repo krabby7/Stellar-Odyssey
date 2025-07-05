@@ -28,16 +28,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STARSTONE_BRICKS_WALL.get())
                 .add(ModBlocks.CUT_STARSTONE_SLAB.get())
                 .add(ModBlocks.CUT_STARSTONE_STAIRS.get())
-                .add(ModBlocks.CUT_STARSTONE_WALL.get());
+                .add(ModBlocks.CUT_STARSTONE_WALL.get())
+
+                .add(ModBlocks.MOONSTONE.get())
+                .add(ModBlocks.CUT_MOONSTONE.get())
+                .add(ModBlocks.CHISELED_MOONSTONE.get())
+                .add(ModBlocks.MOONSTONE_BRICKS.get())
+                .add(ModBlocks.MOONSTONE_BRICKS_SLAB.get())
+                .add(ModBlocks.MOONSTONE_BRICKS_STAIRS.get())
+                .add(ModBlocks.MOONSTONE_BRICKS_WALL.get())
+                .add(ModBlocks.CUT_MOONSTONE_SLAB.get())
+                .add(ModBlocks.CUT_MOONSTONE_STAIRS.get())
+                .add(ModBlocks.CUT_MOONSTONE_WALL.get());
 
 
 
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(ModBlocks.STARDUST.get());
+                .add(ModBlocks.STARDUST.get())
+                .add(ModBlocks.MOONDUST.get());
 
         this.tag(BlockTags.SAND)
-                .add(ModBlocks.STARDUST.get());
+                .add(ModBlocks.STARDUST.get())
+                .add(ModBlocks.MOONDUST.get());
 
 
 
@@ -48,6 +61,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
 
         tag(BlockTags.WALLS).add(ModBlocks.STARSTONE_BRICKS_WALL.get());
+        tag(BlockTags.WALLS).add(ModBlocks.MOONSTONE_BRICKS_WALL.get());
+        tag(BlockTags.WALLS).add(ModBlocks.CUT_STARSTONE_WALL.get());
+        tag(BlockTags.WALLS).add(ModBlocks.CUT_MOONSTONE_WALL.get());
 
         //this.tag(BlockTags.LOGS_THAT_BURN)
     }

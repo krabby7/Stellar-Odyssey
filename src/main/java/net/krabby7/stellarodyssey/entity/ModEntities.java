@@ -1,6 +1,7 @@
 package net.krabby7.stellarodyssey.entity;
 import net.krabby7.stellarodyssey.StellarOdyssey;
 import net.krabby7.stellarodyssey.entity.custom.MummyEndermanEntity;
+import net.krabby7.stellarodyssey.entity.custom.OverseerEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -16,6 +17,10 @@ public class ModEntities {
     public static final Supplier<EntityType<MummyEndermanEntity>> MUMMY_ENDERMAN =
             ENTITY_TYPES.register("mummy_enderman", () -> EntityType.Builder.of(MummyEndermanEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 3f).build("mummy_enderman"));
+
+    public static final Supplier<EntityType<OverseerEntity>> OVERSEER =
+            ENTITY_TYPES.register("overseer", () -> EntityType.Builder.of(OverseerEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 1f).build("overseer"));
 
 
     public static void register(IEventBus eventBus) {

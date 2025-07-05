@@ -35,14 +35,13 @@ public class ModEndBiomes {
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false).temperature(1.0F).downfall(0.0F)
-                .specialEffects((new BiomeSpecialEffects.Builder()).waterColor(0xbdb133).waterFogColor(0xbdb133).fogColor(0xbdb133)
+                .specialEffects((new BiomeSpecialEffects.Builder()).waterColor(0x638dc0).waterFogColor(0x638dc0).fogColor(0xf4e0a8)
                         .skyColor(calculateSkyColor(2.0F)).ambientParticle(new AmbientParticleSettings(ParticleTypes.END_ROD, 0.0001450f))
                         .ambientLoopSound(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP
                         ).ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_BASALT_DELTAS_MOOD, 90000, 8, 2.0D))
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP))
                         .build())
                 .mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
-
     }
 
     protected static int calculateSkyColor(float temperature) {

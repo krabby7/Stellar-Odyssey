@@ -1,7 +1,10 @@
 package net.krabby7.stellarodyssey.event;
 import net.krabby7.stellarodyssey.StellarOdyssey;
 import net.krabby7.stellarodyssey.entity.*;
+import net.krabby7.stellarodyssey.entity.client.ModModelLayers;
+import net.krabby7.stellarodyssey.entity.client.OverseerModel;
 import net.krabby7.stellarodyssey.entity.custom.MummyEndermanEntity;
+import net.krabby7.stellarodyssey.entity.custom.OverseerEntity;
 import net.krabby7.stellarodyssey.worldgen.biome.ModBiomes;
 import net.minecraft.client.model.EndermanModel;
 import net.minecraft.core.BlockPos;
@@ -27,11 +30,14 @@ import static net.minecraft.world.entity.monster.Monster.checkMonsterSpawnRules;
 public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModModelLayers.OVERSEER, OverseerModel::createBodyLayer);
+
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.MUMMY_ENDERMAN.get(), MummyEndermanEntity.createAttributes().build());
+        event.put(ModEntities.OVERSEER.get(), OverseerEntity.createAttributes().build());
     }
 
 
@@ -42,6 +48,10 @@ public class ModEventBusEvents {
             ModEventBusEvents::checkSolarDesertMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(EntityType.ENDERMAN, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                ModEventBusEvents::checkSolarDesertMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+        event.register(ModEntities.OVERSEER.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ModEventBusEvents::checkSolarDesertMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
     }

@@ -11,6 +11,9 @@
     },
     "age=3": {
       "model": "stellarodyssey:block/dragon_cactus_stage3"
+    },
+    "age=4": {
+      "model": "stellarodyssey:block/dragon_cactus_stage4"
     }
   }
 }

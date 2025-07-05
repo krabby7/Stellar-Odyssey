@@ -35,6 +35,10 @@ public class ModItems {
     public static final DeferredItem<Item> MUMMY_ENDERMAN_SPAWN_EGG = ITEMS.register("mummy_enderman_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.MUMMY_ENDERMAN, 0x000000, 0x4f0b0b,
                     new Item.Properties()));
+
+    public static final DeferredItem<Item> OVERSEER_SPAWN_EGG = ITEMS.register("overseer_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.OVERSEER, 0x659b7d, 0x1e4835,
+                    new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

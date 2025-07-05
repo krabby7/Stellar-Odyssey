@@ -28,6 +28,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_SUNBURNT_SHRUB = registerKey("add_sunburnt_shrub");
 
+    public static final ResourceKey<BiomeModifier> ADD_SUNCCULENT = registerKey("add_suncculent");
+
     public static final ResourceKey<BiomeModifier> ADD_DRAGON_CACTUS = registerKey("add_dragon_cactus");
 
     public static final ResourceKey<BiomeModifier> SPAWN_MUMMY_ENDERMAN = registerKey("spawn_mummy_enderman");
@@ -45,6 +47,12 @@ public class ModBiomeModifiers {
         context.register(ADD_SUNBURNT_SHRUB, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SUNBURNT_SHRUB_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+
+        context.register(ADD_SUNCCULENT, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SUNCCULENT_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_DRAGON_CACTUS, new BiomeModifiers.AddFeaturesBiomeModifier(

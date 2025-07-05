@@ -41,8 +41,21 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CUT_STARSTONE_SLAB.get());
         dropSelf(ModBlocks.CUT_STARSTONE_STAIRS.get());
         dropSelf(ModBlocks.CUT_STARSTONE_WALL.get());
+        dropSelf(ModBlocks.MOONDUST.get());
+        dropSelf(ModBlocks.MOONSTONE.get());
+        dropSelf(ModBlocks.CUT_MOONSTONE.get());
+        dropSelf(ModBlocks.CHISELED_MOONSTONE.get());
+        dropSelf(ModBlocks.MOONSTONE_BRICKS.get());
+        dropSelf(ModBlocks.MOONSTONE_BRICKS_SLAB.get());
+        dropSelf(ModBlocks.MOONSTONE_BRICKS_STAIRS.get());
+        dropSelf(ModBlocks.MOONSTONE_BRICKS_WALL.get());
+        dropSelf(ModBlocks.CUT_MOONSTONE_SLAB.get());
+        dropSelf(ModBlocks.CUT_MOONSTONE_STAIRS.get());
+        dropSelf(ModBlocks.CUT_MOONSTONE_WALL.get());
         dropSelf(ModBlocks.SUNBURNT_SHRUB.get());
         this.add(ModBlocks.POTTED_SUNBURNT_SHRUB.get(), createPotFlowerItemTable(ModBlocks.SUNBURNT_SHRUB));
+        dropSelf(ModBlocks.SUNCCULENT.get());
+        this.add(ModBlocks.POTTED_SUNCCULENT.get(), createPotFlowerItemTable(ModBlocks.SUNBURNT_SHRUB));
 
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
