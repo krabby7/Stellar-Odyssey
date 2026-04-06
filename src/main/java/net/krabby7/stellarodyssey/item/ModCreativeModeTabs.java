@@ -55,11 +55,29 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDER_DRAGON_FRUIT);
                         output.accept(ModBlocks.SUNBURNT_SHRUB);
                         output.accept(ModBlocks.SUNCCULENT);
+                        output.accept(ModBlocks.SILVER_WEED);
 
                         output.accept(ModItems.MUMMY_ENDERMAN_SPAWN_EGG);
                         output.accept(ModItems.OVERSEER_SPAWN_EGG);
 
                         output.accept(ModItems.SOLAR_POTTERY_SHERD);
+                        output.accept(ModItems.LUNAR_POTTERY_SHERD);
+                        output.accept(ModItems.CONSTELLATION_POTTERY_SHERD);
+
+                        output.accept(ModBlocks.CELESTEEL_ORE);
+                        output.accept(ModItems.RAW_CELESTEEL);
+                        output.accept(ModItems.CELESTEEL_INGOT);
+                        output.accept(ModItems.CELESTEEL_NUGGET);
+                        output.accept(ModItems.CELESTEEL_SWORD);
+                        output.accept(ModItems.CELESTEEL_PICKAXE);
+                        output.accept(ModItems.CELESTEEL_AXE);
+                        output.accept(ModItems.CELESTEEL_SHOVEL);
+                        output.accept(ModItems.CELESTEEL_HOE);
+                        output.accept(ModItems.CELESTEEL_HELMET);
+                        output.accept(ModItems.CELESTEEL_CHESTPLATE);
+                        output.accept(ModItems.CELESTEEL_LEGGINGS);
+                        output.accept(ModItems.CELESTEEL_BOOTS);
+
                     }).build());
 
     public static void register(IEventBus eventBus) {

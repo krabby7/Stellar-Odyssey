@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "stellarodyssey:cut_moonstone_slab"
+    }
+  },
+  "pattern": [
+    "B",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "stellarodyssey:chiseled_moonstone"
+  }
+}

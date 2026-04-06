@@ -31,6 +31,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "stellarodyssey:celesteel_nugget"
+        },
+        {
+          "type": "minecraft:item",
           "name": "stellarodyssey:dragon_cactus_seeds"
         },
         {

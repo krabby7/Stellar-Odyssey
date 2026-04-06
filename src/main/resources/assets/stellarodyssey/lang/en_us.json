@@ -35,18 +35,67 @@
   "block.stellarodyssey.potted_sunburnt_shrub": "Potted Sunburnt Grass",
   "block.stellarodyssey.suncculent": "Suncculent",
   "block.stellarodyssey.potted_suncculent": "Potted Suncculent",
+  "block.stellarodyssey.silver_weed": "Silver Weed",
+  "block.stellarodyssey.potted_sunburnt_shrub": "Potted Silver Weed",
 
   "item.stellarodyssey.ender_dragon_fruit": "Ender Dragon Fruit",
   "item.stellarodyssey.dragon_cactus_seeds": "Dragon Tooth Cactus Seeds",
   "block.stellarodyssey.dragon_cactus": "Dragon Tooth Cactus",
 
-
   "item.stellarodyssey.solar_pottery_sherd": "Solar Pottery Sherd",
+  "item.stellarodyssey.lunar_pottery_sherd": "Lunar Pottery Sherd",
+  "item.stellarodyssey.constellation_pottery_sherd": "Constellation Pottery Sherd",
+
+  "block.stellarodyssey.celesteel_ore": "Celesteel Ore",
+  "item.stellarodyssey.celesteel_ingot": "Celesteel Ingot",
+  "item.stellarodyssey.celesteel_nugget": "Celesteel Nugget",
+  "item.stellarodyssey.raw_celesteel": "Raw Celesteel",
+  "item.stellarodyssey.celesteel_sword": "Celesteel Sword",
+  "item.stellarodyssey.celesteel_pickaxe": "Celesteel Pickaxe",
+  "item.stellarodyssey.celesteel_axe": "Celesteel Axe",
+  "item.stellarodyssey.celesteel_shovel": "Celesteel Shovel",
+  "item.stellarodyssey.celesteel_hoe": "Celesteel Hoe",
+  "item.stellarodyssey.celesteel_helmet": "Celesteel Helmet",
+  "item.stellarodyssey.celesteel_chestplate": "Celesteel Chestplate",
+  "item.stellarodyssey.celesteel_leggings": "Celesteel Leggings",
+  "item.stellarodyssey.celesteel_boots": "Celesteel Boots",
+
+  "trim_material.stellarodyssey.celesteel": "Celesteel Material",
+
+
+
+
+
+
+
 
 
   "entity.stellarodyssey.mummy_enderman": "Mummified Enderman",
   "item.stellarodyssey.mummy_enderman_spawn_egg": "Mummified Enderman Spawn Egg",
 
   "entity.stellarodyssey.overseer": "Overseer",
-  "item.stellarodyssey.overseer_spawn_egg": "Overseer Spawn Egg"
+  "item.stellarodyssey.overseer_spawn_egg": "Overseer Spawn Egg",
+
+  "entity.stellarodyssey.nova_tick": "Nova Tick",
+  "item.stellarodyssey.nova_tick_spawn_egg": "Nova Tick Spawn Egg",
+
+  "effect.stellarodyssey.teleportation": "Teleportation",
+  "item.minecraft.potion.effect.teleportation_potion": "Potion of Teleportation",
+  "item.minecraft.splash_potion.effect.teleportation_potion": "Splash Potion of Teleportation ",
+  "item.minecraft.lingering_potion.effect.teleportation_potion": "Lingering Potion of Teleportation",
+  "item.minecraft.tipped_arrow.effect.teleportation_potion": "Arrow of Teleportation",
+  "item.minecraft.potion.effect.teleportation_potion_2": "Potion of Teleportation",
+  "item.minecraft.splash_potion.effect.teleportation_potion_2": "Splash Potion of Teleportation",
+  "item.minecraft.lingering_potion.effect.teleportation_potion_2": "Lingering Potion of Teleportation",
+  "item.minecraft.tipped_arrow.effect.teleportation_potion_2": "Arrow of Teleportation",
+
+
+  "effect.stellarodyssey.recalling": "Recalling",
+  "item.minecraft.potion.effect.recalling_potion": "Potion of Recalling",
+  "item.minecraft.splash_potion.effect.recalling_potion": "Splash Potion of Recalling",
+  "item.minecraft.lingering_potion.effect.recalling_potion": "Lingering Potion of Recalling",
+  "item.minecraft.tipped_arrow.effect.recalling_potion": "Arrow of Recalling",
+
+  "enchantment.stellarodyssey.dislocating": "Dislocating",
+  "enchantment.stellarodyssey.dislocating.desc": "Chance for an attacking mob to be randomly teleported away"
 }

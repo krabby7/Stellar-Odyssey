@@ -1,12 +1,17 @@
 package net.krabby7.stellarodyssey;
 
 import net.krabby7.stellarodyssey.block.ModBlocks;
+import net.krabby7.stellarodyssey.effect.ModEffects;
+import net.krabby7.stellarodyssey.enchantment.ModEnchantmentEffects;
 import net.krabby7.stellarodyssey.entity.ModEntities;
-import net.krabby7.stellarodyssey.entity.client.MummyEndermanRenderer;
-import net.krabby7.stellarodyssey.entity.client.OverseerRenderer;
+import net.krabby7.stellarodyssey.entity.client.*;
 import net.krabby7.stellarodyssey.event.ModEvents;
+import net.krabby7.stellarodyssey.item.ModArmorMaterials;
 import net.krabby7.stellarodyssey.item.ModCreativeModeTabs;
 import net.krabby7.stellarodyssey.item.ModItems;
+import net.krabby7.stellarodyssey.loot.ModLootModifiers;
+import net.krabby7.stellarodyssey.potion.ModPotions;
+import net.krabby7.stellarodyssey.trim.ModTrimMaterials;
 import net.krabby7.stellarodyssey.worldgen.biome.ModBiomes;
 import net.krabby7.stellarodyssey.worldgen.biome.ModSurfaceRules;
 import net.minecraft.client.renderer.entity.EndermanRenderer;
@@ -55,6 +60,16 @@ public class StellarOdyssey {
 
         ModEntities.register(modEventBus);
 
+        ModEffects.register(modEventBus);
+
+        ModPotions.register(modEventBus);
+
+        ModEnchantmentEffects.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
+
+        ModArmorMaterials.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -71,8 +86,13 @@ public class StellarOdyssey {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SUNCCULENT.getId(), ModBlocks.POTTED_SUNCCULENT);
         });
 
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SILVER_WEED.getId(), ModBlocks.POTTED_SILVER_WEED);
+        });
+
+
         ModBiomes.registerBiomes();
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeSolarDesertRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeStellarEndRules());
     }
 
     // Add the example block item to the building blocks tab
@@ -94,6 +114,7 @@ public class StellarOdyssey {
 
             EntityRenderers.register(ModEntities.MUMMY_ENDERMAN.get(), MummyEndermanRenderer::new);
             EntityRenderers.register(ModEntities.OVERSEER.get(), OverseerRenderer::new);
+            EntityRenderers.register(ModEntities.NOVA_TICK.get(), NovaTickRenderer::new);
         }
     }
 }

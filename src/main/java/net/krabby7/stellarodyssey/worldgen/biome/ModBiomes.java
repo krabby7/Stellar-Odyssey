@@ -13,10 +13,13 @@ import terrablender.api.Regions;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> SOLAR_DESERT = registerBiomeKey("solar_desert");
+    public static final ResourceKey<Biome> LUNAR_DESERT = registerBiomeKey("lunar_desert");
 
     public static void registerBiomes() {
         EndBiomeRegistry.registerMidlandsBiome(SOLAR_DESERT, 2);
         EndBiomeRegistry.registerHighlandsBiome(SOLAR_DESERT, 2);
+        EndBiomeRegistry.registerMidlandsBiome(LUNAR_DESERT, 2);
+        EndBiomeRegistry.registerHighlandsBiome(LUNAR_DESERT, 2);
         //EndBiomeRegistry.registerEdgeBiome(SOLAR_DESERT, 1000);
     }
 
@@ -28,6 +31,7 @@ public class ModBiomes {
         //register(context, GLOWSTONE_PLAIN, ModNetherBiomes.glowstonePlains(placedFeatures, carver));
         //register(context, END_ROT, ModEndBiomes.endRot(placedFeatures, carver));
         register(context, SOLAR_DESERT, ModEndBiomes.solarDesert(placedFeatures, carver));
+        register(context, LUNAR_DESERT, ModEndBiomes.lunarDesert(placedFeatures, carver));
     }
 
 

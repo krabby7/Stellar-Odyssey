@@ -39,7 +39,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MOONSTONE_BRICKS_WALL.get())
                 .add(ModBlocks.CUT_MOONSTONE_SLAB.get())
                 .add(ModBlocks.CUT_MOONSTONE_STAIRS.get())
-                .add(ModBlocks.CUT_MOONSTONE_WALL.get());
+                .add(ModBlocks.CUT_MOONSTONE_WALL.get())
+
+                .add(ModBlocks.CELESTEEL_ORE.get());
 
 
 
@@ -54,8 +56,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
 
 
-        //this.tag(BlockTags.NEEDS_IRON_TOOL)
-
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.CELESTEEL_ORE.get());
 
         //this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
 

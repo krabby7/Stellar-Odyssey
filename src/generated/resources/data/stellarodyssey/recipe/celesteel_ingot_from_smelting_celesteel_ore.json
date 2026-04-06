@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "celesteel",
+  "ingredient": {
+    "item": "stellarodyssey:celesteel_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "stellarodyssey:celesteel_ingot"
+  }
+}

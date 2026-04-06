@@ -20,6 +20,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Monster;
@@ -49,6 +50,7 @@ public class OverseerEntity extends Monster {
     public static final int TICKS_PER_FLAP = Mth.ceil(3.9269907F);
     protected static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
     private static final int FLAG_IS_CHARGING = 1;
+    protected TargetingConditions lookAtContext;
 
     @Nullable
     private BlockPos boundOrigin;
@@ -65,9 +67,9 @@ public class OverseerEntity extends Monster {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new OverseerChargeAttackGoal());
         this.goalSelector.addGoal(5, new OverseerRandomMoveGoal());
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 24.0F, 1.0F));
+        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 24.0F, 1.0F));
         this.goalSelector.addGoal(3, new AvoidEntityGoal(this, Player.class, 3.0F, 1.0, 1.2));
-        this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
+        this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 32.0F, 1f));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
@@ -110,6 +112,11 @@ public class OverseerEntity extends Monster {
         }
 
 
+        if (this.level().getNearestPlayer(this.getX(), this.getY(), this.getZ(), 32, true) != null) {
+            yBodyRot = (float) this.level().getNearestPlayer(this.getX(), this.getY(), this.getZ(), 32, true).getY();
+        }
+
+
         this.noPhysics = false;
         this.fallDistance = 0;
         this.setNoGravity(true);
@@ -141,7 +148,7 @@ public class OverseerEntity extends Monster {
             }
 
             for(int i = 0; i < 3; ++i) {
-                BlockPos blockpos1 = blockpos.offset(OverseerEntity.this.random.nextInt(15) - 7, OverseerEntity.this.random.nextInt(11) - 5, OverseerEntity.this.random.nextInt(15) - 7);
+                BlockPos blockpos1 = blockpos.offset(OverseerEntity.this.random.nextInt(15) - 7, OverseerEntity.this.random.nextInt(3) - 1, OverseerEntity.this.random.nextInt(15) - 7);
                 if (OverseerEntity.this.level().isEmptyBlock(blockpos1)) {
                     OverseerEntity.this.moveControl.setWantedPosition((double)blockpos1.getX() + 0.5, (double)blockpos1.getY() + 0.5, (double)blockpos1.getZ() + 0.5, 0.25);
                     if (OverseerEntity.this.getTarget() == null) {
@@ -204,6 +211,86 @@ public class OverseerEntity extends Monster {
             }
 
         }
+    }
+
+    class OverseerLookAtPlayerGoal extends Goal{
+        public static final float DEFAULT_PROBABILITY = 0.02F;
+        protected final Mob mob;
+        @Nullable
+        protected Entity lookAt;
+        protected final float lookDistance;
+        private int lookTime;
+        protected final float probability;
+        private final boolean onlyHorizontal;
+        protected final Class<? extends LivingEntity> lookAtType;
+        protected final TargetingConditions lookAtContext;
+
+        public OverseerLookAtPlayerGoal(Mob mob, Class<? extends LivingEntity> lookAtType, float lookDistance) {
+            this(mob, lookAtType, lookDistance, 0.02F);
+        }
+
+        public OverseerLookAtPlayerGoal(Mob mob, Class<? extends LivingEntity> lookAtType, float lookDistance, float probability) {
+            this(mob, lookAtType, lookDistance, probability, false);
+        }
+
+        public OverseerLookAtPlayerGoal(Mob mob, Class<? extends LivingEntity> lookAtType, float lookDistance, float probability, boolean onlyHorizontal) {
+            this.mob = mob;
+            this.lookAtType = lookAtType;
+            this.lookDistance = lookDistance;
+            this.probability = probability;
+            this.onlyHorizontal = onlyHorizontal;
+            this.setFlags(EnumSet.of(Flag.LOOK));
+            if (lookAtType == Player.class) {
+                this.lookAtContext = TargetingConditions.forNonCombat().range((double)lookDistance).selector((p_25531_) -> EntitySelector.notRiding(mob).test(p_25531_));
+            } else {
+                this.lookAtContext = TargetingConditions.forNonCombat().range((double)lookDistance);
+            }
+
+        }
+
+        public boolean canUse() {
+            if (this.mob.getRandom().nextFloat() >= this.probability) {
+                return false;
+            } else {
+                if (this.mob.getTarget() != null) {
+                    this.lookAt = this.mob.getTarget();
+                }
+
+                if (this.lookAtType == Player.class) {
+                    this.lookAt = this.mob.level().getNearestPlayer(this.lookAtContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+                } else {
+                    this.lookAt = this.mob.level().getNearestEntity(this.mob.level().getEntitiesOfClass(this.lookAtType, this.mob.getBoundingBox().inflate((double)this.lookDistance, (double)3.0F, (double)this.lookDistance), (p_148124_) -> true), this.lookAtContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+                }
+
+                return this.lookAt != null;
+            }
+        }
+
+        public boolean canContinueToUse() {
+            if (!this.lookAt.isAlive()) {
+                return false;
+            } else {
+                return this.mob.distanceToSqr(this.lookAt) > (double)(this.lookDistance * this.lookDistance) ? false : this.lookTime > 0;
+            }
+        }
+
+        public void start() {
+            this.lookTime = this.adjustedTickDelay(40 + this.mob.getRandom().nextInt(40));
+        }
+
+        public void stop() {
+            this.lookAt = null;
+        }
+
+        public void tick() {
+            if (this.lookAt.isAlive()) {
+                double d0 = this.onlyHorizontal ? this.mob.getEyeY() : this.lookAt.getEyeY();
+                this.mob.getLookControl().setLookAt(this.lookAt.getX(), d0, this.lookAt.getZ());
+                --this.lookTime;
+            }
+
+        }
+
     }
 
 

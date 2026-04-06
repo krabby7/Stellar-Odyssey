@@ -1,6 +1,9 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": "stellarodyssey:solar_desert",
+  "biomes": [
+    "stellarodyssey:solar_desert",
+    "stellarodyssey:lunar_desert"
+  ],
   "spawners": {
     "type": "stellarodyssey:mummy_enderman",
     "maxCount": 3,

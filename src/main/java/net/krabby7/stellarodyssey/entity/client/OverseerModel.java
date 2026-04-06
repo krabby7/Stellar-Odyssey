@@ -64,8 +64,8 @@ public class OverseerModel extends HierarchicalModel<OverseerEntity> {
 
 
     private void applyHeadRotation(float headYaw, float headPitch) {
-        headYaw = Mth.clamp(headYaw, -60, 60);
-        headPitch = Mth.clamp(headPitch, -25f, 45);
+        headYaw = Mth.clamp(headYaw, -3600f, 3600f);
+        headPitch = Mth.clamp(headPitch, -3600f, 3600f);
 
 
         this.body.yRot = headYaw * ((float)Math.PI / 180f);

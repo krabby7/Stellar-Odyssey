@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "stellarodyssey:block/cut_moonstone",
+    "side": "stellarodyssey:block/cut_moonstone",
+    "top": "stellarodyssey:block/cut_moonstone"
+  }
+}

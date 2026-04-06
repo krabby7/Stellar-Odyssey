@@ -1,0 +1,6 @@
+// 1.21.1	2026-04-05T21:06:15.4450276	Tags for minecraft:item mod id stellarodyssey
+3c47ba9cdc501f66e3502779c0bd6b311d7a7edd data/minecraft/tags/item/sand.json
+67306845ae858337bf84cf2a42553562338de367 data/minecraft/tags/item/stone_crafting_materials.json
+67306845ae858337bf84cf2a42553562338de367 data/minecraft/tags/item/stone_tool_materials.json
+d0e03dd978e5b5c707aa8c677e2f340bac822c76 data/minecraft/tags/item/trimmable_armor.json
+e15fcd2e08d0ebfcd9dbabb886a5e029cd848d4d data/minecraft/tags/item/trim_materials.json

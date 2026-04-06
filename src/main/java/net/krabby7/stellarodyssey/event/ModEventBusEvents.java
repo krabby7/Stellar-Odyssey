@@ -1,10 +1,8 @@
 package net.krabby7.stellarodyssey.event;
 import net.krabby7.stellarodyssey.StellarOdyssey;
 import net.krabby7.stellarodyssey.entity.*;
-import net.krabby7.stellarodyssey.entity.client.ModModelLayers;
-import net.krabby7.stellarodyssey.entity.client.OverseerModel;
-import net.krabby7.stellarodyssey.entity.custom.MummyEndermanEntity;
-import net.krabby7.stellarodyssey.entity.custom.OverseerEntity;
+import net.krabby7.stellarodyssey.entity.client.*;
+import net.krabby7.stellarodyssey.entity.custom.*;
 import net.krabby7.stellarodyssey.worldgen.biome.ModBiomes;
 import net.minecraft.client.model.EndermanModel;
 import net.minecraft.core.BlockPos;
@@ -31,6 +29,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.OVERSEER, OverseerModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.NOVA_TICK, NovaTickModel::createBodyLayer);
 
     }
 
@@ -38,6 +37,7 @@ public class ModEventBusEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.MUMMY_ENDERMAN.get(), MummyEndermanEntity.createAttributes().build());
         event.put(ModEntities.OVERSEER.get(), OverseerEntity.createAttributes().build());
+        event.put(ModEntities.NOVA_TICK.get(), NovaTickEntity.createAttributes().build());
     }
 
 
@@ -59,6 +59,6 @@ public class ModEventBusEvents {
 
     public static boolean checkSolarDesertMonsterSpawnRules(EntityType<? extends Monster> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         //level.getBiome(pos).equals(ModBiomes.SOLAR_DESERT) &&
-        return  level.getBiome(pos).is(ModBiomes.SOLAR_DESERT) && checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) || checkMonsterSpawnRules(type, (ServerLevelAccessor) level, spawnType, pos, random) ;
+        return  level.getBiome(pos).is(ModBiomes.SOLAR_DESERT) ||  level.getBiome(pos).is(ModBiomes.LUNAR_DESERT) && checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) || checkMonsterSpawnRules(type, (ServerLevelAccessor) level, spawnType, pos, random) ;
     }
 }

@@ -1,5 +1,6 @@
-// 1.21.1	2025-07-05T10:27:38.4504134	Tags for minecraft:block mod id stellarodyssey
-2a2b3dbef7685922eee761227a8245e6d196ef4f data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.1	2026-04-05T19:32:16.373288	Tags for minecraft:block mod id stellarodyssey
+5029a4d8a074f046c7a7e6afc983f2c8b2ac5a2c data/minecraft/tags/block/mineable/pickaxe.json
 3c47ba9cdc501f66e3502779c0bd6b311d7a7edd data/minecraft/tags/block/mineable/shovel.json
+6b66a39b84fc0d90c01ad93605f59e7ac98eaa48 data/minecraft/tags/block/needs_iron_tool.json
 3c47ba9cdc501f66e3502779c0bd6b311d7a7edd data/minecraft/tags/block/sand.json
 e3d6b013971ad97542489247e88b5dfac0731a8d data/minecraft/tags/block/walls.json

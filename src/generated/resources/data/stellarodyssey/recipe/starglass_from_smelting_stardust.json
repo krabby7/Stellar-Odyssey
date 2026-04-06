@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "starglass",
+  "ingredient": {
+    "item": "stellarodyssey:stardust"
+  },
+  "result": {
+    "count": 1,
+    "id": "stellarodyssey:starglass"
+  }
+}

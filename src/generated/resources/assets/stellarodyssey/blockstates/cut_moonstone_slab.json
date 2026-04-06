@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "stellarodyssey:block/cut_moonstone_slab"
+    },
+    "type=double": {
+      "model": "stellarodyssey:block/cut_moonstone"
+    },
+    "type=top": {
+      "model": "stellarodyssey:block/cut_moonstone_slab_top"
+    }
+  }
+}

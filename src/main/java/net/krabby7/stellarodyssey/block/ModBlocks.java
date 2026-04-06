@@ -4,12 +4,19 @@ import com.mojang.serialization.MapCodec;
 import net.krabby7.stellarodyssey.StellarOdyssey;
 import net.krabby7.stellarodyssey.block.custom.DragonCactusBlock;
 import net.krabby7.stellarodyssey.item.ModItems;
+import net.krabby7.stellarodyssey.block.custom.*;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BrushableBlockEntity;
@@ -23,6 +30,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
+
+import static net.minecraft.world.level.block.PinkPetalsBlock.AMOUNT;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
@@ -199,7 +208,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> MOONSTONE_BRICKS_STAIRS = registerBlock("moonstone_bricks_stairs",
             () -> new StairBlock(ModBlocks.MOONSTONE_BRICKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(0.8F).lightLevel(p_50755_ -> 4)));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(0.8F).lightLevel(p_50755_ -> 2)));
 
     public static final DeferredBlock<Block> MOONSTONE_BRICKS_WALL = registerBlock("moonstone_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(0.8F).lightLevel(p_50755_ -> 2))  {
@@ -219,9 +228,9 @@ public class ModBlocks {
             });
 
     public static final DeferredBlock<Block> SUNBURNT_SHRUB = registerBlock("sunburnt_shrub",
-            () -> new BushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FERN)) {
+            () -> new ModBonemealableBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FERN)) {
                 @Override
-                protected MapCodec<? extends BushBlock> codec() {
+                protected MapCodec<? extends ModBonemealableBushBlock> codec() {
                     return null;
                 }
                 @Override
@@ -233,14 +242,30 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), SUNBURNT_SHRUB, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
 
 
+
+    public static final DeferredBlock<Block> SILVER_WEED = registerBlock("silver_weed",
+            () -> new ModBonemealableBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FERN)) {
+                @Override
+                protected MapCodec<? extends ModBonemealableBushBlock> codec() {
+                    return null;
+                }
+                @Override
+                protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+                    return state.is(BlockTags.SAND) || state.getBlock() instanceof FarmBlock;
+                }
+            });
+    public static final DeferredBlock<Block> POTTED_SILVER_WEED = BLOCKS.register("potted_silver_weed",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), SILVER_WEED, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+
     public static final DeferredBlock<Block> DRAGON_CACTUS = BLOCKS.register("dragon_cactus",
             () -> new DragonCactusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
 
 
     public static final DeferredBlock<Block> SUNCCULENT = registerBlock("suncculent",
-            () -> new BushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FERN) .offsetType(BlockBehaviour.OffsetType.XZ)) {
+            () -> new ModBonemealableBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FERN) .offsetType(BlockBehaviour.OffsetType.XZ)) {
                 @Override
-                protected MapCodec<? extends BushBlock> codec() {
+                protected MapCodec<? extends ModBonemealableBushBlock> codec() {
                     return null;
                 }
                 @Override
@@ -252,6 +277,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POTTED_SUNCCULENT = BLOCKS.register("potted_suncculent",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), SUNCCULENT, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
 
+    public static final DeferredBlock<Block> CELESTEEL_ORE = registerBlock("celesteel_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

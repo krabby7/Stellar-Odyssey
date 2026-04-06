@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_celesteel_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "stellarodyssey:celesteel_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stellarodyssey:celesteel_ingot_from_smelting_celesteel_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_celesteel_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stellarodyssey:celesteel_ingot_from_smelting_celesteel_ore"
+    ]
+  }
+}

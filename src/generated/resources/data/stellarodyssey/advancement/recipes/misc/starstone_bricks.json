@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_starstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "stellarodyssey:starstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stellarodyssey:starstone_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_starstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stellarodyssey:starstone_bricks"
+    ]
+  }
+}

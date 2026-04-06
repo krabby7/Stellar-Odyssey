@@ -24,6 +24,10 @@ public class ModSurfaceRules {
 
     private static final SurfaceRules.RuleSource STARSTONE = makeStateRule(ModBlocks.STARSTONE.get());
 
+    private static final SurfaceRules.RuleSource MOONDUST = makeStateRule(ModBlocks.MOONDUST.get());
+
+    private static final SurfaceRules.RuleSource MOONSTONE = makeStateRule(ModBlocks.MOONSTONE.get());
+
 /*
     public static SurfaceRules.RuleSource makeKaupenValleyRules() {
         return SurfaceRules.sequence(
@@ -55,20 +59,29 @@ public class ModSurfaceRules {
 
  */
 
-    public static SurfaceRules.RuleSource makeSolarDesertRules() {
+    public static SurfaceRules.RuleSource makeStellarEndRules() {
         return SurfaceRules.sequence(
-                //SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SOLAR_DESERT), STARSTONE),
-                // Default to end stone
-                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, STARDUST),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, STARDUST),
-                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, STARSTONE),
-                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, END_STONE)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SOLAR_DESERT),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, STARDUST),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, STARDUST),
+                                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, STARSTONE),
+                                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, END_STONE))),
 
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_DESERT),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MOONDUST),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MOONDUST),
+                                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, MOONSTONE),
+                                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, END_STONE)))
+        );
+    }
 
-
-
-
-
+    public static SurfaceRules.RuleSource makeLunarDesertRules() {
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_DESERT),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MOONDUST),
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MOONDUST),
+                        SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, MOONSTONE),
+                        SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, END_STONE)))
         );
     }
 

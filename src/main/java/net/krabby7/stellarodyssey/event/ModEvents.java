@@ -1,6 +1,7 @@
 package net.krabby7.stellarodyssey.event;
 import net.krabby7.stellarodyssey.StellarOdyssey;
 import net.krabby7.stellarodyssey.item.ModItems;
+import net.krabby7.stellarodyssey.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -34,6 +35,9 @@ public class ModEvents {
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
 
-        //builder.addMix(Potions.WATER, ModItems.ENDER_DRAGON_FRUIT.get(), (Holder<Potion>) Items.DRAGON_BREATH);
+        builder.addMix(Potions.AWKWARD, Items.CHORUS_FRUIT, ModPotions.TELEPORTATION_POTION);
+        builder.addMix(ModPotions.TELEPORTATION_POTION, Items.GLOWSTONE_DUST, ModPotions.TELEPORTATION_POTION_2);
+        //builder.addMix(ModPotions.TELEPORTATION_POTION, Items.AMETHYST_SHARD, ModPotions.RECALLING_POTION);
+        //builder.addMix(Potions.WATER, ModItems.ENDER_DRAGON_FRUIT.get(), Items.DRAGON_BREATH);
     }
 }

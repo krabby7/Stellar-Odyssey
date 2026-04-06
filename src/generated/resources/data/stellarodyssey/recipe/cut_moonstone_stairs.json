@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "moonstone",
+  "key": {
+    "#": {
+      "item": "stellarodyssey:cut_moonstone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "stellarodyssey:cut_moonstone_stairs"
+  }
+}

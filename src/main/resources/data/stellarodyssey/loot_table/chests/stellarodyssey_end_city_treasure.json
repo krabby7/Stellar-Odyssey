@@ -1,0 +1,303 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 8.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "stellarodyssey:celesteel_ingot",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:diamond_boots",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:diamond_chestplate",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:diamond_leggings",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:diamond_helmet",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:iron_boots",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:iron_chestplate",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:iron_leggings",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:iron_helmet",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 20.0,
+                "min": 0.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "stellarodyssey:celesteel_boots",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "stellarodyssey:celesteel_leggings",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "stellarodyssey:celesteel_chestplate",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 29.0,
+                "min": 10.0
+              },
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "stellarodyssey:celesteel_helmet",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "stellarodyssey:dislocating"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 10
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 0.0
+      }
+    }
+  ],
+  "random_sequence": "stellarodyssey:chests/stellarodyssey_end_city_treasure"
+}

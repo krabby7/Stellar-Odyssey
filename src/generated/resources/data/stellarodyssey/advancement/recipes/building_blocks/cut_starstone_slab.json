@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_starstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "stellarodyssey:cut_starstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stellarodyssey:cut_starstone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_starstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stellarodyssey:cut_starstone_slab"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "stellarodyssey:celesteel_ingot"
+    }
+  },
+  "pattern": [
+    "B B",
+    "B B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "stellarodyssey:celesteel_boots"
+  }
+}

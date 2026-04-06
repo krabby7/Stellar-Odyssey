@@ -22,19 +22,23 @@ import java.util.List;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_EBONY = registerKey("add_tree_ebony");
 
-    public static final ResourceKey<BiomeModifier> ADD_BLACK_OPAL_ORE = registerKey("add_black_opal_ore");
-    public static final ResourceKey<BiomeModifier> ADD_NETHER_BLACK_OPAL_ORE = registerKey("add_nether_black_opal_ore");
-    public static final ResourceKey<BiomeModifier> ADD_END_BLACK_OPAL_ORE = registerKey("add_end_black_opal_ore");
+    public static final ResourceKey<BiomeModifier> ADD_CELESTEEL_ORE = registerKey("add_celesteel_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_SUNBURNT_SHRUB = registerKey("add_sunburnt_shrub");
+
+    public static final ResourceKey<BiomeModifier> ADD_SILVER_WEED = registerKey("add_silver_weed");
 
     public static final ResourceKey<BiomeModifier> ADD_SUNCCULENT = registerKey("add_suncculent");
 
     public static final ResourceKey<BiomeModifier> ADD_DRAGON_CACTUS = registerKey("add_dragon_cactus");
 
+    public static final ResourceKey<BiomeModifier> ADD_DRAGON_CACTUS_2 = registerKey("add_dragon_cactus_2");
+
     public static final ResourceKey<BiomeModifier> SPAWN_MUMMY_ENDERMAN = registerKey("spawn_mummy_enderman");
 
     public static final ResourceKey<BiomeModifier> SPAWN_MUMMY_ENDERMAN_2 = registerKey("spawn_mummy_enderman_2");
+
+    public static final ResourceKey<BiomeModifier> SPAWN_MUMMY_ENDERMAN_3 = registerKey("spawn_mummy_enderman_2");
 
     public static final ResourceKey<BiomeModifier> ADD_BLACK_OPAL_GEODE = registerKey("add_black_opal_geode");
 
@@ -49,6 +53,11 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SUNBURNT_SHRUB_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
+        context.register(ADD_SILVER_WEED, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.LUNAR_DESERT)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SILVER_WEED_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
 
         context.register(ADD_SUNCCULENT, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT)),
@@ -56,9 +65,14 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_DRAGON_CACTUS, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT)),
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT), biomes.getOrThrow(ModBiomes.LUNAR_DESERT)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DRAGON_CACTUS_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+//        context.register(ADD_DRAGON_CACTUS_2, new BiomeModifiers.AddFeaturesBiomeModifier(
+//                HolderSet.direct(biomes.getOrThrow(ModBiomes.LUNAR_DESERT)),
+//                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DRAGON_CACTUS_PLACED_KEY)),
+//                GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(SPAWN_MUMMY_ENDERMAN, new BiomeModifiers.AddSpawnsBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.DESERT), biomes.getOrThrow(Biomes.BADLANDS)),
@@ -66,8 +80,17 @@ public class ModBiomeModifiers {
 
 
         context.register(SPAWN_MUMMY_ENDERMAN_2, new BiomeModifiers.AddSpawnsBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT)),
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SOLAR_DESERT), biomes.getOrThrow(ModBiomes.LUNAR_DESERT)),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.MUMMY_ENDERMAN.get(), 7, 1, 3))));
+
+        context.register(ADD_CELESTEEL_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CELESTEEL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+//        context.register(SPAWN_MUMMY_ENDERMAN_3, new BiomeModifiers.AddSpawnsBiomeModifier(
+//                HolderSet.direct(biomes.getOrThrow(ModBiomes.LUNAR_DESERT)),
+//                List.of(new MobSpawnSettings.SpawnerData(ModEntities.MUMMY_ENDERMAN.get(), 7, 1, 3))));
+
 
     }
 

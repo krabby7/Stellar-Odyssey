@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_moonstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "stellarodyssey:cut_moonstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stellarodyssey:cut_moonstone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_moonstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stellarodyssey:cut_moonstone_slab"
+    ]
+  }
+}

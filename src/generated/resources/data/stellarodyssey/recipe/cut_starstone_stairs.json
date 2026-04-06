@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "starstone",
+  "key": {
+    "#": {
+      "item": "stellarodyssey:cut_starstone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "stellarodyssey:cut_starstone_stairs"
+  }
+}

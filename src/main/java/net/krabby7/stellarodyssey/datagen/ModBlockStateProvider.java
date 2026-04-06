@@ -35,11 +35,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.MOONGLASS);
         //blockItem(ModBlocks.STARGLASS_PANE);
 
+        simpleBlock(ModBlocks.MOONDUST.get());
+        simpleBlock(ModBlocks.CUT_MOONSTONE.get());
+        simpleBlock(ModBlocks.MOONSTONE.get());
+        simpleBlock(ModBlocks.MOONSTONE_BRICKS.get());
+        simpleBlock(ModBlocks.CHISELED_MOONSTONE.get());
         blockItem(ModBlocks.MOONDUST);
         blockItem(ModBlocks.CUT_MOONSTONE);
         blockItem(ModBlocks.MOONSTONE);
         blockItem(ModBlocks.MOONSTONE_BRICKS);
         blockItem(ModBlocks.CHISELED_MOONSTONE);
+
+        blockItem(ModBlocks.MOONSTONE_BRICKS_SLAB);
+        blockItem(ModBlocks.MOONSTONE_BRICKS_STAIRS);
+        //blockItem(ModBlocks.MOONSTONE_BRICKS_WALL);
+        blockItem(ModBlocks.CUT_MOONSTONE_SLAB);
+        blockItem(ModBlocks.CUT_MOONSTONE_STAIRS);
+        //blockItem(ModBlocks.CUT_MOONSTONE_WALL);
+
+        simpleBlock(ModBlocks.CELESTEEL_ORE.get());
+        blockItem(ModBlocks.CELESTEEL_ORE);
 
         stairsBlock(((StairBlock) ModBlocks.STARSTONE_BRICKS_STAIRS.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()));
         slabBlock(((SlabBlock) ModBlocks.STARSTONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()), blockTexture(ModBlocks.STARSTONE_BRICKS.get()));
@@ -49,9 +64,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(((SlabBlock) ModBlocks.CUT_STARSTONE_SLAB.get()), blockTexture(ModBlocks.CUT_STARSTONE.get()), blockTexture(ModBlocks.CUT_STARSTONE.get()));
         wallBlock(((WallBlock) ModBlocks.CUT_STARSTONE_WALL.get()), blockTexture(ModBlocks.CUT_STARSTONE.get()));
 
+        stairsBlock(((StairBlock) ModBlocks.MOONSTONE_BRICKS_STAIRS.get()), blockTexture(ModBlocks.MOONSTONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.MOONSTONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.MOONSTONE_BRICKS.get()), blockTexture(ModBlocks.MOONSTONE_BRICKS.get()));
+        wallBlock(((WallBlock) ModBlocks.MOONSTONE_BRICKS_WALL.get()), blockTexture(ModBlocks.MOONSTONE_BRICKS.get()));
+
+        stairsBlock(((StairBlock) ModBlocks.CUT_MOONSTONE_STAIRS.get()), blockTexture(ModBlocks.CUT_MOONSTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.CUT_MOONSTONE_SLAB.get()), blockTexture(ModBlocks.CUT_MOONSTONE.get()), blockTexture(ModBlocks.CUT_MOONSTONE.get()));
+        wallBlock(((WallBlock) ModBlocks.CUT_MOONSTONE_WALL.get()), blockTexture(ModBlocks.CUT_MOONSTONE.get()));
+
         simpleBlock(ModBlocks.SUNBURNT_SHRUB.get(),
                 models().cross(blockTexture(ModBlocks.SUNBURNT_SHRUB.get()).getPath(), blockTexture(ModBlocks.SUNBURNT_SHRUB.get())).renderType("cutout"));
         simpleBlock(ModBlocks.POTTED_SUNBURNT_SHRUB.get(), models().singleTexture("potted_sunburnt_shrub", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.SUNBURNT_SHRUB.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.SILVER_WEED.get(),
+                models().cross(blockTexture(ModBlocks.SILVER_WEED.get()).getPath(), blockTexture(ModBlocks.SILVER_WEED.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_SILVER_WEED.get(), models().singleTexture("potted_silver_weed", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.SUNBURNT_SHRUB.get())).renderType("cutout"));
 
         makeBush(((BushBlock) ModBlocks.DRAGON_CACTUS.get()), "dragon_cactus_stage", "dragon_cactus_stage");
@@ -83,6 +111,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void blockItem(DeferredBlock<Block> deferredBlock) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("stellarodyssey:block/" + deferredBlock.getId().getPath()));
     }
+
 
     private void blockItem(DeferredBlock<Block> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("stellarodyssey:block/" + deferredBlock.getId().getPath() + appendix));

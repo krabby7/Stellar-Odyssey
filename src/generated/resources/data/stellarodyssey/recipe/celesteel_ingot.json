@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    },
+    {
+      "item": "stellarodyssey:celesteel_nugget"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "stellarodyssey:celesteel_ingot"
+  }
+}

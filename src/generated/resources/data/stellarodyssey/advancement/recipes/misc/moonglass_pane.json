@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_moonglass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "stellarodyssey:moonglass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stellarodyssey:moonglass_pane"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_moonglass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stellarodyssey:moonglass_pane"
+    ]
+  }
+}

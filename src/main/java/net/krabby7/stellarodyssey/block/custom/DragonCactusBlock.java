@@ -48,6 +48,7 @@ public class DragonCactusBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 4);
     private static final VoxelShape SAPLING_SHAPE;
     private static final VoxelShape MID_GROWTH_SHAPE;
+    private static int growthCount = 0;
 
 
     @Override
@@ -58,10 +59,9 @@ public class DragonCactusBlock extends BushBlock implements BonemealableBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         int i = (Integer)state.getValue(AGE);
-        boolean flag = i == 3;
         if (i == MAX_AGE) {
-            int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(ModItems.ENDER_DRAGON_FRUIT.get(), j + (flag ? 1 : 0)));
+            int j = 1 + level.random.nextInt(1);
+            popResource(level, pos, new ItemStack(ModItems.ENDER_DRAGON_FRUIT.get(), j));
             level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             BlockState blockstate = (BlockState)state.setValue(AGE, 2);
             level.setBlock(pos, blockstate, 2);
@@ -90,12 +90,35 @@ public class DragonCactusBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        growthCount++;
         int i = (Integer)state.getValue(AGE);
         if (i < MAX_AGE && level.getRawBrightness(pos.above(), 0) >= 1 && CommonHooks.canCropGrow(level, pos, state, random.nextInt(5) == 0)) {
             BlockState blockstate = (BlockState)state.setValue(AGE, i + 1);
             level.setBlock(pos, blockstate, 2);
             CommonHooks.fireCropGrowPost(level, pos, state);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
+        }
+
+        BlockPos blockpos = pos.above();
+        if (level.isEmptyBlock(blockpos)) {
+            int k;
+            for(k = 1; level.getBlockState(pos.below(k)).is(this); ++k) {
+            }
+
+            if (k < 9) {
+                int j = (Integer)state.getValue(AGE);
+                if (CommonHooks.canCropGrow(level, blockpos, state, true)) {
+                    if (j >= 2) {
+                        level.setBlockAndUpdate(blockpos, this.defaultBlockState());
+//                        BlockState blockstate = (BlockState)state.setValue(AGE, 0);
+//                        level.setBlock(pos, blockstate, 4);
+//                        level.neighborChanged(blockstate, blockpos, this, pos, false);
+                        growthCount = 0;
+                    }
+
+                    CommonHooks.fireCropGrowPost(level, pos, state);
+                }
+            }
         }
 
     }

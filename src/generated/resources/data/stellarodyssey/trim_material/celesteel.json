@@ -1,0 +1,9 @@
+{
+  "asset_name": "celesteel",
+  "description": {
+    "color": "#FEC4F9",
+    "translate": "trim_material.stellarodyssey.celesteel"
+  },
+  "ingredient": "stellarodyssey:celesteel_ingot",
+  "item_model_index": 1.0
+}

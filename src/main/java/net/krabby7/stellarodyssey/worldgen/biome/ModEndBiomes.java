@@ -44,6 +44,31 @@ public class ModEndBiomes {
                 .mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
+    public static Biome lunarDesert(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        // Mob spawns
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 22, 1, 4));
+
+
+        // Biome features
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
+
+        //addFeature(biomeBuilder, GenerationStep.Decoration.UNDERGROUND_DECORATION, EndPlacements.END_SPIKE);
+        //spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 1000, 1, 2));
+
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false).temperature(1.0F).downfall(0.0F)
+                .specialEffects((new BiomeSpecialEffects.Builder()).waterColor(0x638dc0).waterFogColor(0x638dc0).fogColor(0xf4e0a8)
+                        .skyColor(calculateSkyColor(2.0F)).ambientParticle(new AmbientParticleSettings(ParticleTypes.END_ROD, 0.0001450f))
+                        .ambientLoopSound(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP
+                        ).ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_BASALT_DELTAS_MOOD, 90000, 8, 2.0D))
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP))
+                        .build())
+                .mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+    }
+
     protected static int calculateSkyColor(float temperature) {
         float $$1 = temperature / 3.0F;
         $$1 = Mth.clamp($$1, -1.0F, 1.0F);
